@@ -31,11 +31,9 @@ int main()
 
     }
 
-   /*printf("--------------------------------------\n"); */
-
     contador = 1;
-   /* troca = 0; */
     Primeira_Vez = 0;
+   
     for ( lin = 0; lin < i; lin ++ )
     {
 
@@ -47,72 +45,68 @@ int main()
          contador = contador + 1;
          M[lin][col] = contador;
 
-           if (lin - 1 >=  0  && M[lin - 1][col] > 1 )   /* //0 */
+           if (lin - 1 >=  0  && M[lin - 1][col] > 1 ) 
            {
 
                M[lin][col] = M[lin - 1][col];
 
            }
 
-           if (lin - 1 >= 0 &&  col + 1 <= j && M[lin - 1][col + 1] > 1) /* //1 */
+           if (lin - 1 >= 0 &&  col + 1 <= j && M[lin - 1][col + 1] > 1)
            {
 
                M[lin][col] = M[lin - 1][col + 1] ;
 
            }
 
-           if ( col + 1 <= j && M[lin][col + 1] > 1) /* //2 */
+           if ( col + 1 <= j && M[lin][col + 1] > 1) 
            {
 
                M[lin][col] = M[lin][col + 1];
 
            }
 
-           if (lin + 1 <= i && col + 1 <= j && M[lin + 1][col + 1] > 1) /* //3 */
+           if (lin + 1 <= i && col + 1 <= j && M[lin + 1][col + 1] > 1)
            {
 
                M[lin][col] = M[lin + 1][col + 1];
 
            }
 
-           if (lin + 1 <= i  && M[lin + 1][col] > 1) /* //4 */
+           if (lin + 1 <= i  && M[lin + 1][col] > 1)
            {
 
                M[lin][col] = M[lin + 1][col];
 
            }
 
-          if (lin + 1 <= i && col - 1 >= 0  && M[lin + 1][col - 1] > 1) /* //5 */
+          if (lin + 1 <= i && col - 1 >= 0  && M[lin + 1][col - 1] > 1)
            {
 
              M[lin][col] = M[lin + 1][col - 1];
 
            }
 
-          if ( col - 1 >= 0  && M[lin][col - 1] > 1) /* //6 */
+          if ( col - 1 >= 0  && M[lin][col - 1] > 1)
            {
 
              M[lin][col] = M[lin][col - 1];
 
            }
 
-          if (lin - 1 >= 0  && col - 1 >= 0  && M[lin - 1][col - 1] > 1) /* //7 */
-           {
+          if (lin - 1 >= 0  && col - 1 >= 0  && M[lin - 1][col - 1] > 1)
+          {
 
              M[lin][col] = M[lin - 1][col - 1];
 
-           }
-
+          }
 
        }
-
 
      }
 
     }
 
-/*  //  contador = 1;
-  //  verificador[300][300] = contador; */
     for ( k = 0; k < 600; k++ )
     {
 
@@ -123,65 +117,61 @@ int main()
 
             if (M[lin][col] > 1 )
             {
-        /*    //  contador = contador + 1;
-            //  M[lin][col] = contador; */
-
-                if (lin - 1 >= 0 && M[lin - 1][col] > M[lin][col] )   /* //0 */
+      
+                if (lin - 1 >= 0 && M[lin - 1][col] > M[lin][col] ) 
                 {
 
                     M[lin][col] = M[lin - 1][col];
 
-
-		/*  //      contador = contador - 1; */
                 }
 
-                if (lin - 1 >= 0 && col + 1 <= j && M[lin - 1][col + 1] > M[lin][col] )  /* //1 */
+                if (lin - 1 >= 0 && col + 1 <= j && M[lin - 1][col + 1] > M[lin][col] ) 
                 {
 
                     M[lin][col] = M[lin - 1][col + 1] ;
-           /*   //      contador = contador - 1; */
+         
                 }
 
                 if ( col + 1 <= j && M[lin][col + 1] > M[lin][col]) /* //2 */
                 {
 
                     M[lin][col] = M[lin][col + 1];
-            /*  //      contador = contador - 1; */
+           
                 }
 
-                if (lin + 1 <= i && col + 1 <= j && M[lin + 1][col + 1] > M[lin][col] ) /* //3 */
+                if (lin + 1 <= i && col + 1 <= j && M[lin + 1][col + 1] > M[lin][col] )
                 {
 
                     M[lin][col] = M[lin + 1][col + 1];
-           /*     //    contador = contador - 1; */
+          
                 }
 
-                if (lin + 1 <= i && M[lin + 1][col] > M[lin][col] ) /* //4 */
+                if (lin + 1 <= i && M[lin + 1][col] > M[lin][col] ) 
                 {
 
                     M[lin][col] = M[lin + 1][col];
-            /*  //      contador = contador - 1; */
+
                 }
 
-               if (lin + 1 <= i && col - 1 >= 0  && M[lin + 1][col - 1] > M[lin][col] ) /* //5 */
+               if (lin + 1 <= i && col - 1 >= 0  && M[lin + 1][col - 1] > M[lin][col] )
                 {
 
                   M[lin][col] = M[lin + 1][col - 1];
-           /*   //    contador = contador - 1; */
+
                 }
 
-               if ( col - 1 >= 0 && M[lin][col - 1] > M[lin][col] ) /* //6 */
+               if ( col - 1 >= 0 && M[lin][col - 1] > M[lin][col] ) 
                 {
 
                   M[lin][col] = M[lin][col - 1];
-              /* //    contador = contador - 1; */
+
                 }
 
-               if (lin - 1 >= 0 && col - 1 >= 0 && M[lin - 1][col - 1] > M[lin][col] ) /* //7 */
+               if (lin - 1 >= 0 && col - 1 >= 0 && M[lin - 1][col - 1] > M[lin][col] ) /
                 {
 
                   M[lin][col] = M[lin - 1][col - 1];
-               /* //  contador = contador - 1; */
+               
                 }
 
             }
@@ -192,14 +182,9 @@ int main()
 
     }
     Primeira_Vez = 0;
-  /* printf("--------------------------------------\n"); */
+    contador = 0;
 
-
-
-   contador = 0;
-/*  //  salva_contador = 0; */
-
-  d = 0;
+    d = 0;
     for ( lin = 0; lin < i; lin ++)
     {
 
@@ -213,16 +198,10 @@ int main()
 
          }
 
-
-      /*  printf("%d ", M[lin][col]); */
         d++;
 
       }
-      /*  printf(" \n"); */
-
-  /*  //    printf("-------------------------------------------------\n" );
-
-    //    printf("%4.d", vetor[90000] ); */
+   
 
     }
 
@@ -244,7 +223,6 @@ int main()
 
         }
 
-       /* printf("%4.d", vetor[i] ); */
     }
 
     Primeira_Vez = 0;
@@ -259,110 +237,7 @@ int main()
 
     }
 
-
-
-/*    for ( i = 0; i < a; i++ )
-    {
-        for ( j = i + 1; j < a; j++)
-        {
-            if ( Primeira_Vez == 0 && vetor[i] > 0 )
-            {
-                contador = contador + 1;
-                Primeira_Vez = 1;
-                vetor_aux = vetor[i];
-            }
-
-            else
-            {
-                if ( )
-                {
-
-                    contador = contador + 1;
-
-                }
-
-            }
-
-        }
-
-    }
-
-    */
-      /* printf("--------------------------------------\n"); */
-       
     printf("%d\n", contador);
 
     return 0;
 }
-
-
-/*
-
-P1
-6 6
-1 0 0 0 0 0
-1 0 0 0 1 0
-1 0 0 0 1 0
-1 0 0 0 0 1
-1 0 0 0 1 0
-1 1 1 1 0 1
-
-
-
-P1
-6 6
-1 0 0 0 0 0
-1 0 1 0 0 0
-1 0 1 0 1 0
-1 1 1 0 0 1
-1 1 1 0 1 0
-1 1 1 1 0 1
-
-
-
-
-P1
-6 6
-0 0 0 0 0 0
-1 1 1 0 0 0
-1 0 0 0 1 0
-1 1 1 1 0 0
-1 0 0 0 0 0
-1 1 1 1 0 0
-
-
-P1
-6 6
-0 0 0 0 0 0
-0 0 1 0 0 1
-0 0 1 0 0 1
-0 0 1 0 1 0
-0 0 1 1 1 1
-1 1 0 0 0 0
-
-P1
-40 22
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 1 0 0 0 0 0 0 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
-0 1 1 1 1 1 1 1 1 0 1 0 0 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 0 0 0
-0 1 1 1 1 1 1 1 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0
-0 1 0 1 1 1 1 1 1 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0
-0 0 0 0 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 0 0 0
-0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 0 0 1 0 0 0
-0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 0 0 1 0 0 0
-0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 1 1 1 1 1 1 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0
-0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0
-0 0 0 0 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
-0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 0
-0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 1 1 1 1 0 0 0
-0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 1
-0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1
-0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-
-*/
