@@ -148,7 +148,7 @@ void Leitura_Das_Operacoes ()
 }
 
 
-int main() /* invocar as funçoes depois aqui !!!!*/
+int main() 
 {
 
   Leitura_Das_Operacoes ();
